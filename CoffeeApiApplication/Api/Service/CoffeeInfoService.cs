@@ -35,7 +35,17 @@
 			return "Coffee code not found";
 		}
 
-		public List<CoffeeInfo> GetCoffeeInfo()
+        public string GetCoffeeNameAndCode(string code)
+        {
+            if (coffeeCodeToName.ContainsKey(code))
+            {
+                return coffeeCodeToName[code];
+            }
+
+            return "Coffee name not found";
+        }
+
+        public List<CoffeeInfo> GetCoffeeInfo()
 		{
 			var coffeeInfo = new List<CoffeeInfo>
 			{
@@ -73,14 +83,6 @@
 			return coffeeInfo;
 		}
 
-		public string GetCoffeeNameAndCode(string code)
-		{
-			if (coffeeCodeToName.ContainsKey(code))
-			{
-				return coffeeCodeToName[code];
-			}
-
-			return "Coffee name not found";
-		}
+		
 	}
 }

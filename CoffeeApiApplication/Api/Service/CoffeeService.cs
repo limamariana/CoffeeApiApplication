@@ -1,4 +1,6 @@
-﻿namespace CoffeeApiApplication.Api.Service
+﻿using CoffeeApiApplication.Api.Interface;
+
+namespace CoffeeApiApplication.Api.Service
 {
 	public class CoffeeService : ICoffeeService
 	{
@@ -22,8 +24,5 @@
 		}
 	}
 
-	public interface ICoffeeService
-	{
-		List<Coffee> GetCoffees();
-	}
+	
 }

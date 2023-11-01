@@ -15,9 +15,4 @@ namespace CoffeeApiApplication.Api
 		}
 	}
 
-	public class CoffeeResponse
-	{
-		[JsonPropertyName("Coffees")]
-		public List<Coffee> Coffees { get; set; }
-	}
 }

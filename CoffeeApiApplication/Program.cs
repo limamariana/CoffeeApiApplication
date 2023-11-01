@@ -1,7 +1,10 @@
 using CoffeeApiApplication.Api;
+using CoffeeApiApplication.Api.Interface;
+using CoffeeApiApplication.Api.Request;
+using CoffeeApiApplication.Api.Response;
 using CoffeeApiApplication.Api.Service;
 
-using static CoffeeApiApplication.Api.Service.RecommedationService;
+
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

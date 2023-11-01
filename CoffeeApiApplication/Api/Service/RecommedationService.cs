@@ -1,4 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using CoffeeApiApplication.Api.Interface;
+using CoffeeApiApplication.Api.Request;
+using CoffeeApiApplication.Api.Response;
+using System.Text.Json.Serialization;
 using static CoffeeApiApplication.Api.Service.RecommedationService;
 
 namespace CoffeeApiApplication.Api.Service
@@ -95,39 +98,6 @@ namespace CoffeeApiApplication.Api.Service
 			return totalTime;
 		}
 
-		public class RecommendationRequest
-		{
-			public List<RecommendationItem> Recommendations { get; set; }
-		}
-
-		public class RecommendationItem
-		{
-			public string code { get; set; }
-			public int time { get; set; }
-		}
-
-		public class RecommendationResponse
-		{
-			[JsonPropertyName("Recommedations")]
-			public List<RecommendationItemWithWait> Recommendations { get; set; }
-		}
-
-		public class RecommendationItemWithWait
-		{
-			public string name { get; set; }
-			public string code { get; set; }
-			public int wait { get; set; }
-		}
-
-		public interface IRecommedationService
-		{
-			public RecommendationResponse CalculateNextCoffee(RecommendationRequest request);
-
-			public double CalculateCaffeineWithHalfLife(double initialCaffeine, int totalTime, int halfLife);
-
-			public int CalculateCaffeineConsumption(RecommendationRequest request);
-
-			public int CalculateTotalTime(RecommendationRequest request);
-		}
+		
 	}
 }
